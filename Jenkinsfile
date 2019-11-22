@@ -17,4 +17,11 @@ pipeline {
             }
         }
     }
+    post {
+      success {
+        script {
+          echo 'Great Success...'
+        }
+      }
+    }
 }
