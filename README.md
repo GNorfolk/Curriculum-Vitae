@@ -2,6 +2,9 @@
 This is my README file.
 
 ## Installation
+Create repo in Github
+Somehow get it so you can push changes to Github
+---
 Download and install Jenkins
 Source: https://www.theserverside.com/tutorial/Use-the-Jenkins-OAuth-plug-in-to-securely-pull-from-GitHub
 When it asks for a URL ie http://localhost:8080 you need to use ngrok.io:
