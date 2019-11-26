@@ -1,3 +1,5 @@
-# data "aws_vpc" "main" {
-#   cidr_block = var.vpc_cidr
-# }
+data "aws_vpc" "main" {
+  tags = {
+    Name = "main"
+  }
+}
