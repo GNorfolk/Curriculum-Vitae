@@ -1,6 +1,8 @@
 resource "aws_instance" "app" {
-  ami           = "ami-0d497f1292765adc5"
-  instance_type = "t2.micro"
+  ami             = "ami-0d497f1292765adc5"
+  instance_type   = "t2.micro"
+  subnet_id       = data.aws_subnet.app_az_a.id
+  security_groups = [aws_security_group.app.id]
 }
 
 resource "aws_security_group" "app" {
