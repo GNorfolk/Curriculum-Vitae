@@ -5,34 +5,36 @@ pipeline {
   }
   stages {
     stage('Setup') {
-      steps {
-        echo 'Setup...'
-        switch (environment) {
-          case 'Dev':
-            role = "arn:aws:iam::103348857345:role/Admin"
-            session = "Curriculum-Vitae-${environment}-Deployment"
-            region = "eu-west-1"
-            break
-          case 'Test':
-            role = "arn:aws:iam::103348857345:role/Admin"
-            session = "Curriculum-Vitae-${environment}-Deployment"
-            region = "eu-west-1"
-            break
-          case 'Prod':
-            role = "arn:aws:iam::103348857345:role/Admin"
-            session = "Curriculum-Vitae-${environment}-Deployment"
-            region = "eu-west-1"
-            break
+      script {
+        steps {
+          echo 'Setup...'
+          switch (environment) {
+            case 'Dev':
+              role = "arn:aws:iam::103348857345:role/Admin"
+              session = "Curriculum-Vitae-${environment}-Deployment"
+              region = "eu-west-1"
+              break
+            case 'Test':
+              role = "arn:aws:iam::103348857345:role/Admin"
+              session = "Curriculum-Vitae-${environment}-Deployment"
+              region = "eu-west-1"
+              break
+            case 'Prod':
+              role = "arn:aws:iam::103348857345:role/Admin"
+              session = "Curriculum-Vitae-${environment}-Deployment"
+              region = "eu-west-1"
+              break
+          }
+          echo "Assuming Role"
+          bat("aws sts assume-role \
+            --role-arn ${role} \
+            --role-session-name ${session} \
+            --region ${region} \
+            > tmp/assume-role-output.json")
+          echo "Preparing Credentials"
+          credsJson = readFile("${workspace}/tmp/assume-role-output.json")
+          credsObj = new groovy.json.JsonSlurperClassic().parseText(credsJson)
         }
-        echo "Assuming Role"
-        bat("aws sts assume-role \
-          --role-arn ${role} \
-          --role-session-name ${session} \
-          --region ${region} \
-          > tmp/assume-role-output.json")
-        echo "Preparing Credentials"
-        credsJson = readFile("${workspace}/tmp/assume-role-output.json")
-        credsObj = new groovy.json.JsonSlurperClassic().parseText(credsJson)
       }
     }
     stage('Deploy') {
