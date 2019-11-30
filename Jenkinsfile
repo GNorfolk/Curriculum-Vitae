@@ -50,6 +50,7 @@ pipeline {
           bat("packer build \
             -var 'aws_access_key=${credsObj.Credentials.AccessKeyId}' \
             -var 'aws_secret_key=${credsObj.Credentials.SecretAccessKey}' \
+            -var 'token=${credsObj.Credentials.SessionToken}' \
             packer.json \
           ")
         }
