@@ -9,7 +9,6 @@
       "instance_type": "t3.micro",
       "ssh_username": "ec2-user",
       "ami_name": "packer-cv-{{timestamp}}",
-      "ssh_keypair_name": "packer-keypair",
       "source_ami_filter": {
         "filters": {
           "virtualization-type": "hvm",

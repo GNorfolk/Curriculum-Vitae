@@ -47,7 +47,7 @@ pipeline {
       steps {
         dir("${workspace}\\packer") {
           echo 'Running Packer'
-          bat("packer build \
+          bat("packer build -debug \
             -var 'aws_access_key=${credsObj.Credentials.AccessKeyId}' \
             -var 'aws_secret_key=${credsObj.Credentials.SecretAccessKey}' \
             -var 'token=${credsObj.Credentials.SessionToken}' \
