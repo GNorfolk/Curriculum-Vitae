@@ -8,7 +8,17 @@
       "region": "eu-west-1",
       "instance_type": "t3.micro",
       "ssh_username": "ec2-user",
-      "ami_name": "packer-cv-{{timestamp}}",
+      "ami_name": "curriculumvitae-{{timestamp}}",
+      "vpc_filter": {
+        "filters": {
+          "tag:Name": "main"
+        }
+      },
+      "subnet_filter": {
+        "filters": {
+          "tag:Name": "elb_az_a"
+        }
+      },
       "source_ami_filter": {
         "filters": {
           "virtualization-type": "hvm",
