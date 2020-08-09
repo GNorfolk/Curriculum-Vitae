@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "bucket" {
 }
 
 resource "aws_route53_record" "cv" {
-  zone_id = ""
+  zone_id = data.aws_route53_zone.cv.zone_id
   name    = "cv.norfolkgaming.com"
   type    = "A"
   alias {
