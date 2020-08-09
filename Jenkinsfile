@@ -12,7 +12,7 @@ pipeline {
       steps {
         script {
           echo "Prerequisite Setup"
-          bat "mkdir tmp"
+          sh "mkdir tmp"
           echo "Declaring Variables"
           switch (environment) {
             case 'Dev':
@@ -32,7 +32,7 @@ pipeline {
               break
           }
           echo "Assuming Role"
-          bat("aws sts assume-role \
+          sh("aws sts assume-role \
             --role-arn ${role} \
             --role-session-name ${session} \
             --region ${region} \
