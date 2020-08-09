@@ -21,5 +21,6 @@ resource "aws_route53_record" "cv" {
     # zone_id for eu-west-1 s3 comes from here: https://docs.aws.amazon.com/general/latest/gr/s3.html
     name    = "cv.norfolkgaming.com.s3-website-eu-west-1.amazonaws.com"
     zone_id = "Z1BKCTXD74EZPE"
+    evaluate_target_health  = false
   }
 }
