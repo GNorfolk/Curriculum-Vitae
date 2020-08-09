@@ -45,8 +45,9 @@ pipeline {
     }
     stage('Build') {
       steps {
-        dir("${workspace}") {
-          echo 'Holder for CV build.'
+        dir("${workspace}/tex") {
+          echo 'Running CV build'
+          sh("xelatex cv_13.tex")
         }
       }
     }

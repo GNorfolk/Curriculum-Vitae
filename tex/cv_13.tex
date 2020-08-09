@@ -1,0 +1,222 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wilson Resume/CV
+% XeLaTeX Template
+% Version 1.0 (22/1/2015)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Howard Wilson (https://github.com/watsonbox/cv_template_2004) with
+% extensive modifications by Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% To Create PDF:    xelatex cv_13.tex   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{article} % Default font size
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\input{structure.tex} % Include the file specifying document layout
+\hyphenpenalty=1000
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{George R. Norfolk -- Résumé} % Print the main header
+
+%------------------------------------------------
+
+\parbox{0.5\textwidth}{ % First block
+\begin{tabbing} % Enables tabbing
+\hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
+{\bf Address} \> Flat 5, 59 Gordon Road,\\ % Address line 1
+\> Ealing, London. W52AL. \\ % Address line 2
+{\bf Date of Birth} \> 2$^{nd}$ June 1992 \\ % Date of birth 
+\end{tabbing}}
+\hfill % Horizontal space between the two blocks
+\parbox{0.5\textwidth}{ % Second block
+\begin{tabbing} % Enables tabbing
+\hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
+{\bf Mobile Phone} \> +44(0)7904 999 301 \\ % Mobile phone
+{\bf Email} \> \href{mailto:georgenorfolk@hotmail.co.uk}{georgenorfolk@hotmail.co.uk} \\ % Email address
+\end{tabbing}}
+
+%----------------------------------------------------------------------------------------
+%	PERSONAL PROFILE
+%----------------------------------------------------------------------------------------
+
+\section{Personal Profile}
+\small
+I am an eager, reliable, and dedicated DevOps Engineer with an enthusiasm for good agile values and a DevOps culture. I am passionate about maintaining infrastructure as code and security best practice, as well as upskilling with new tools \& langauges and reaping the benfits in my day to day work. I have a keen interest in the high-level service role of a DevOps or Platform team and how we interact with and support development teams.
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Certifications}
+
+\tabbedblock{
+\bf{Oct 2019} \> AWS Certified Sysops Administrator Associate - Amazon Web Services\\[5pt]
+\>\+
+\textit{Result:} \> Pass (834/1000) \\
+}
+
+%------------------------------------------------
+
+\tabbedblock{
+\bf{2014-2017} \> Bachelor's Degree - \href{https://www.qmul.ac.uk/}{Queen Mary University of London} \\[5pt]
+\>BSc. Astrophysics - \textbf{Second Class Honours: Upper Division} \\
+\>\+
+\textit{ - 3$^{rd}$ year project: Fortran simulation of 3 body problem totalling 500 Billion iterations.}\\
+\textit{ - Elected Social Secretary of Queen Mary Games and Video Gaming society.}\\
+}
+
+
+%------------------------------------------------
+
+\tabbedblock{
+\bf{2013-2014} \> Foundation Degree - \href{https://www.qmul.ac.uk/}{Queen Mary University of London} \\[5pt]
+\>Science and Engineering Foundation Programme - \textbf{First Class Honours} \\
+
+\>\+
+\textit{ - Officer Cadet in the British Army University of London Officer Training Corps.}\\
+}
+
+%----------------------------------------------------------------------------------------
+%	EMPLOYMENT HISTORY SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Employment History}
+
+\job
+{May 2019 -}{Present}
+{LexisNexis, Lexis House, 30 Farringdon St, London, EC4A 4HH.}
+{https://www.lexisnexis.co.uk/}
+{DevOps Engineer}
+{
+I joined the London DevOps team in March 2019 with Sparta Global, and became a full-time employee of LexisNexis two months later. In the time since joining, I have had the following responsibilties and experience:
+
+\begin{itemize-noindent}[noitemsep]
+\setlist{nosep}
+\item{Deployment of legacy and modern web apps into AWS using Jenkins, Packer, and Terraform.}
+\item{Monitoring and Management of AWS accounts using Jenkins, Python scriping, and Terraform (VPC, IAM, Config, SSM).}
+\item{Defined \& documented best practice AWS deployments using Jenkins, used to deploy previously on premesis web application.}
+\begin{itemize-noindent}[noitemsep]
+\item{Including AWS CLI \& credential best practices, secretsmanager integration, security gates, and basic deployment testing.}
+\end{itemize-noindent}
+\item{Deploying dummy application onto Kubernetes cluster, and supporting teams utilising it.}
+\item{Executed multiple InfoSec initiatives, including IAM least privilege, Infra as Code, networking, software scanning, security gates, etc.}
+\item{Driving force behind my team's agile transformation, advocating within team and enlisting help from Agile Delivery Manager for management.}
+\end{itemize-noindent}
+
+\rule{0mm}{5mm}\textbf{Technologies:} AWS (EC2, ASG, ELB, R53, RDS, Lambda, etc), Jenkins, Packer, Terraform, Python, Docker, Kubernetes.}
+
+%------------------------------------------------
+
+\job
+{Nov 2017 -}{April 2019}
+{Sparta Global, 6th Floor, 125 London Wall, London, EC2Y 5AS.}
+{https://www.spartaglobal.com/}
+{Consultant}
+{
+I undertook 12 weeks of unpaid programming training prior to employment, specialising in DevOps technologies. I attained a placement at LexisNexis ES in Leeds, before transferring to LexisNexis UK in London for the final two months. In this time I gained the following experience: 
+
+\begin{itemize-noindent}[noitemsep]
+\item{Owner of support for Azure \& on premesis environments, triage of Windows machines and Dynamics 365 application.}
+\item{Developed C\# data transformation process on behalf of the Automation Lead.}
+\item{Contributed to my team's agile \& Kanban transformation, and was a member of the company agile Community of Practice.}
+\end{itemize-noindent}
+
+\rule{0mm}{5mm}\textbf{Technologies:} Azure Cloud, Azure DevOps, Powershell, C\#, VMWare, Microsoft Dynamics 365, Windows.}
+
+%----------------------------------------------------------------------------------------
+%	IT/COMPUTING SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Software Engineering Skills}
+
+\skillgroup{Programming Languages / Tools}
+{
+\textit{Environment} - AWS, Azure, VMWare \\
+\textit{Tools} - Jenkins, Azure Pipelines, GoCD \\
+\textit{Languages} - Python, Powershell, C\#, Terraform, Groovy \\
+\textit{Infra As Code} - Terraform, Groovy, Packer, Kubernetes, Docker \\
+\textit{OS} - Linux, Windows
+}
+
+%------------------------------------------------
+
+\skillgroup{Agile}
+{
+\textit{Agile / Kanban transformation within a DevOps team}\\
+\textit{Definition of team mission statement, goals, customers}\\
+\textit{Champion of DevOps and agile culture \& values}
+}
+
+%------------------------------------------------
+
+\skillgroup{Personal Project}
+{
+\textit{Application} - Ruby on Rails, HTML, CSS, JavaScript\\
+\textit{Database} - PostgreSQL\\
+\textit{Infrastructure} - AWS, Packer, Terraform v0.12 Infra as Code\\
+\textit{Deployment} - Jenkins in Blue-Green configuration
+}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Interests}
+
+\interestsgroup{
+\interest{Jogging, Badminton, Cycling.}
+\interest{Creative Writing.}
+\interest{Arts and Crafts.}
+\interest{Tabletop, Role Playing, and Video Games.}
+}
+
+%----------------------------------------------------------------------------------------
+%	REFEREE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Referees}
+
+\parbox{0.5\textwidth}{ % First block
+\begin{tabbing}
+\hspace{2.75cm} \= \hspace{4cm} \= \kill % Spacing within the block
+{\bf Name} \> Adrian Farnell \\ % Referee name
+{\bf Company} \> Lloyds Banking Group \\ % Referee company
+{\bf Position} \> Lead Engineer \\ % Referee job title 
+{\bf Email} \> \href{mailto:adrian.farnell@lloydsbanking.com}{adrian.farnell@lloydsbanking.com} \\ % Referee email
+{\bf Phone} \> +44(0)7760 172 759 % Referee phone number
+\end{tabbing}}
+\hfill % Horizontal space between the two blocks
+%\parbox{0.5\textwidth}{ % Second block
+%\begin{tabbing}
+%\hspace{2.75cm} \= \hspace{4cm} \= \kill % Spacing within the block
+%{\bf Name} \> Michael "Big Mike" Tucker\\ % Referee name
+%{\bf Company} \> Burbank Buy More \\ % Referee company
+%{\bf Position} \> Store Manager \\ % Referee job title 
+%{\bf Email} \> \href{mailto:mike@buymore.com}{mike@buymore.com} \\ % Referee email
+%{\bf Phone} \> +44(0)7904 999 301 % Referee phone number
+%\end{tabbing}}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
