@@ -5,7 +5,7 @@ pipeline {
     choice(name: 'environment', choices: ['Dev', 'Test', 'Prod'], description: "Environment to deploy to.")
   }
   environment {
-
+    PATH = "/usr/local/opt/helm@2/bin:/Users/norfolgx/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin"
   }
   stages {
     stage('Setup') {
@@ -59,7 +59,7 @@ pipeline {
             -var secret_key=${credsObj.Credentials.SecretAccessKey} \
             -var token=${credsObj.Credentials.SessionToken}")
             echo "Deploying Terraform"
-          sh("terraform plan -no-color \
+          sh("terraform apply -auto-approve -no-color \
             -var access_key=${credsObj.Credentials.AccessKeyId} \
             -var secret_key=${credsObj.Credentials.SecretAccessKey} \
             -var token=${credsObj.Credentials.SessionToken}")
