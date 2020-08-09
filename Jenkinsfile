@@ -48,6 +48,7 @@ pipeline {
         dir("${workspace}/tex") {
           echo 'Running CV build'
           sh("xelatex cv_13.tex")
+          sh("xelatex cv_13.tex")
         }
       }
     }
@@ -73,6 +74,7 @@ pipeline {
       script {
         echo 'End of Jenkinsfile'
         sh("rm -rf tmp")
+        cleanWs()
       }
     }
   }
