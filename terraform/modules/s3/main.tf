@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket = "GeorgeRNorfolk.cv"
+  bucket = "cv.norfolkgaming.com"
   acl    = "public-read"
   # policy = file("policy.json")
   website {
