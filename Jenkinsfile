@@ -49,6 +49,9 @@ pipeline {
           echo 'Running CV build'
           sh("xelatex cv_13.tex")
           sh("xelatex cv_13.tex")
+          sh("pdftohtml -enc UTF-8 -noframes cv_13.pdf index.html")
+          sh("ls")
+          sh("cat index.html")
         }
       }
     }
