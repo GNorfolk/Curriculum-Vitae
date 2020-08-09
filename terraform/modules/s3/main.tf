@@ -2,16 +2,16 @@ resource "aws_s3_bucket" "bucket" {
   bucket = "cv.norfolkgaming.com"
   acl    = "public-read"
   website {
-    index_document = "cv_13.pdf"
+    index_document = "index.html"
   }
 }
 
 resource "aws_s3_bucket_object" "object" {
   bucket  = "cv.norfolkgaming.com"
-  key     = "cv_13.pdf"
-  source  = "../../../tex/cv_13.pdf"
+  key     = "index.html"
+  source  = "../../../tex/index.html"
   acl     = "public-read"
-  etag    = filemd5("../../../tex/cv_13.pdf")
+  etag    = filemd5("../../../tex/index.html")
 }
 
 resource "aws_route53_record" "cv" {
