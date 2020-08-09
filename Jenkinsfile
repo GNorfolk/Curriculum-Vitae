@@ -5,7 +5,7 @@ pipeline {
     choice(name: 'environment', choices: ['Dev', 'Test', 'Prod'], description: "Environment to deploy to.")
   }
   environment {
-    Path = "C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;D:\\Program Files\\Java\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\AMD APP\\bin\\x86_64;C:\\Program Files (x86)\\AMD APP\\bin\\x86;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;D:\\Program Files\\Git\\cmd;D:\\Program Files\\Git\\mingw64\\bin;D:\\Program Files\\Git\\usr\\bin;D:\\Program Files\\nodejs\\;C:\\Users\\TheNorfolk\\AppData\\Roaming\\npm;C:\\Users\\TheNorfolk\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\TheNorfolk\\AppData\\Local\\atom\\bin;C:\\Users\\TheNorfolk\\terraform_0.12.16_windows_amd64;C:\\Users\\TheNorfolk\\packer_1.4.5_windows_amd64"
+
   }
   stages {
     stage('Setup') {
@@ -45,22 +45,21 @@ pipeline {
     }
     stage('Build') {
       steps {
-        dir("${workspace}\\packer") {
-          echo 'Running Packer'
-          bat("packer build packer.json")
+        dir("${workspace}") {
+          echo 'Holder for CV build.'
         }
       }
     }
     stage('Deploy') {
       steps {
-        dir("${workspace}\\terraform\\deploys\\${environment}") {
+        dir("${workspace}/terraform/deploys/${environment}") {
           echo "Initialising Terraform"
-          bat("terraform init -input=false -no-color \
+          sh("terraform init -input=false -no-color \
             -var access_key=${credsObj.Credentials.AccessKeyId} \
             -var secret_key=${credsObj.Credentials.SecretAccessKey} \
             -var token=${credsObj.Credentials.SessionToken}")
             echo "Deploying Terraform"
-          bat("terraform apply -auto-approve -no-color \
+          sh("terraform plan -no-color \
             -var access_key=${credsObj.Credentials.AccessKeyId} \
             -var secret_key=${credsObj.Credentials.SecretAccessKey} \
             -var token=${credsObj.Credentials.SessionToken}")
@@ -72,7 +71,7 @@ pipeline {
     cleanup {
       script {
         echo 'End of Jenkinsfile'
-        bat("""rmdir "${workspace}\\tmp" /S /Q""")
+        sh("rm -rf tmp")
       }
     }
   }
