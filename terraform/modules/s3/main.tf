@@ -9,9 +9,9 @@ resource "aws_s3_bucket" "bucket" {
 resource "aws_s3_bucket_object" "object" {
   bucket  = "cv.norfolkgaming.com"
   key     = "cv_13.pdf"
-  source  = "../../tex/cv_13.pdf"
+  source  = "../../../tex/cv_13.pdf"
   acl     = "public-read"
-  etag    = filemd5("../../tex/cv_13.pdf")
+  etag    = filemd5("../../../tex/cv_13.pdf")
 }
 
 resource "aws_route53_record" "cv" {
